@@ -1,0 +1,108 @@
+.content {
+  display: grid;
+  grid-template-rows: 7rem 1fr;
+  grid-template-areas: 'header header' 'left right';
+}
+
+header {
+  grid-area: header;
+  background: var(--color-primary);
+}
+
+main {
+  grid-area: right;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+main .container {
+  width: min(36.3rem 100%); 
+}
+
+main .container section h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-primary);
+  font-size: 3.2rem;
+  margin-top: 8rem;
+}
+
+main .container section p {
+  font-size: 1.2rem;
+  color: var(--color-ligth);
+  margin-bottom: 2rem;
+  padding: 0rem 5rem 1rem 5rem;
+}
+
+main .container section form {
+  max-width: 50rem;
+}
+
+main .container section form input {
+  border: 0.1rem solid var(--color-grey-light);
+  padding: 0 5rem;
+  margin-bottom: 1rem;
+  height: 5rem;
+  border-radius: 0.8rem;
+}
+
+main .container section form button {
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 8rem;
+  margin: 5rem auto;
+  height: 5rem;
+  border-radius: 0.8rem;
+}
+
+main .container section button:hover {
+  filter: brightness(1.2) /*"brightness" -. aplica um brilho */
+}
+
+main .container section strong {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: var(--color-grey-grey);
+}
+
+main .container section strong a{
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+main .container section strong a:hover{
+  filter: brightness(1.2) /*"brightness" -. aplica um brilho */
+}
+
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+/* ### --- --- --- MEDIA QUERIES --- --- --- ---   ### */
+/* ### --- medium large devices: mais de 980px --- ### */
+/* ### --- --- --- --- --- --- --- --- --- --- --- ### */
+
+@media(min-width: 980px) {
+
+  .content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100vh;
+    grid-template-areas: 'left right';
+  }
+
+  #bg {
+    grid-area: left;
+    background: url('/assets/home-bg-img.svg') no-repeat center/contain var(--color-primary);
+    background-size: 30rem;
+  }
+
+  main {
+    grid-area: right;
+    display: flex;
+    align-items: center;
+  }
+
+}

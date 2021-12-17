@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  border:none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+
+html {
+  --color-primary: #835AFD;
+  --color-ligth: #B399FF;
+  --color-background: #F6FAFF;
+  --color-white: #FAFAFA;
+  --color-grey-light: #E5EAF1;
+  --color-grey-grey: #A1B2CD;
+  --color-red: #E83F5B;
+
+  /* é utilizado dessa forma para não precisar dividir por 16, ai divide por 10*/
+  font-size: 62.5%; /* 62.5% = 10px */
+
+}
+
+body {
+  height: 100vh;
+  background: var(--color-background);
+}
+
+body, button, input, textarea {
+  /* clamp = intervalo de tamanho 
+      Se a tela for menor ele atribui 14px
+      Se a tela for tamanho padrão 1.6rem
+      Se a tela for bem maior que o padrão 2vw
+  */
+  font-size: clamp(14px, 1.6rem, 2vw);
+
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Poppins', sans-serif;*/ ;
+
+}
+
+button {
+  cursor: pointer;
+}
+
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: react(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

@@ -1,0 +1,313 @@
+/* ========= RESET ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========= VARIABLES ========= */
+
+:root {
+
+  --hue: 159;
+
+  /* -- Colors -- */
+  --base-color: #F9F9F9;
+  --base-color-white: #FFF;
+
+  --base-color-dark: hsl(var(--hue) 41% 10%);
+  --primary-color: hsl(var(--hue) 36% 57%);
+
+  --base-color-grey: #767676;
+
+  --prices-color: #00A441;
+  --title-color-primary: #F179E5;
+  --title-color-second: #7993F1;
+  --title-color-third: #E4BA30; 
+}
+
+/* ========= BASE ========= */
+body {
+  font: 400 1rem 'Poppins', sans-serif;
+  color: var(--base-color-dark);
+  background: var(--base-color);
+  -webkit-font-snoothing: antialiased;
+}
+
+
+h1 {
+  font: 700 1.875rem 'Poppins', sans-serif;
+  color: var(--base-color-dark);
+  -webkit-font-snoothing: auto;
+}
+
+h2 {
+  font: 700 1.5rem 'Poppins', sans-serif;
+  -webkit-font-snoothing: auto;
+}
+
+.title-girls {
+  color: var(--title-color-primary);
+}
+
+.title-boys {
+  color: var(--title-color-second);
+}
+
+.title-babys {
+  color: var(--title-color-third);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
+    
+  );
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: var(--base-color-white);
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem 'DM Sans', sans-serif;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: var(--base-color-dark);
+}
+
+/* ========= LAYOUT ========= */
+
+#header {
+  display: flex;
+  border-bottom: 1px solid #e4e4e4;
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--base-color-white);
+}
+
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  margin-top: 4.5rem;
+}
+
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+
+/* ========= LOGO ========= */
+
+.logo{
+  font: 700 1.31rem 'Poppins', sans-serif;
+  color: var(--base-color-dark);
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+/* ========= NAVIGATION ========= */
+
+#header nav {
+  height: 4.5rem; /* 90px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
+
+#header nav ul li {
+  text-align: center;
+}
+
+#header nav ul li a {
+  transition: color 0.2s;
+  font: 700 1.5rem 'Poppins', sans-serif;
+  color: var(--base-color-dark);
+  -webkit-font-snoothing: auto;
+  position: relative;
+}
+
+#header nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+#header nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--primary-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+
+  transition: width 0.2s;
+}
+
+#header nav ul li a:hover::after {
+  width: 100%;
+}
+
+#header nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* -- mostrando menu --*/
+
+#header nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--base-color-white);
+  height: 100vh;
+  width: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#header nav.show .menu {
+  display: grid;
+  place-content: center;
+}
+
+#header nav.show ul {
+  gap: 4rem;
+}
+
+/* toggle menu */
+
+.toggle {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#header nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  right: 1.5rem;
+
+  /*transition: ;*/
+}
+
+#header nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+/* ========= HOME ========= */
+#home {
+  overflow: hidden;
+}
+
+#home .container {
+  margin: 0;
+}
+
+#home .container .title {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#home .container .controls {
+  text-align: center;
+}
+
+/* ========= SECTION GIRLS ========= */
+
+#girls header {
+  padding: 4rem 0;
+
+
+}
+
+#girls .clothes {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08); /* borda sombreada */
+  border-bottom: 0.25rem solid var(--title-color-primary);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+#girls .clothes .clothe {
+  background: chartreuse;
+}
+
+#girls .clothes .clothe .description {
+  display: flex;
+  justify-content: space-between;
+}
+
+#girls .clothes .clothe .description div{
+  text-align: right;
+
+  background: chocolate;
+}
+
+#girls .clothes .clothe .description div strong{
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+
+  background: rosybrown;
+}
+
+#girls .clothes .clothe img{
+  width: 9.37rem;
+}
